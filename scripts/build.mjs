@@ -1,5 +1,9 @@
 import { build } from "esbuild";
 import path from "node:path";
+import { execSync } from "node:child_process";
+
+// TODO: Think of a better way.
+execSync('npx tsc --emitDeclarationOnly');
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
