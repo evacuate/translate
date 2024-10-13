@@ -29,11 +29,15 @@
     "format:write": "biome format --write ./src",
     "lint": "biome lint ./src",
     "sort": "node scripts/sort.mjs",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.3",
     "esbuild": "^0.24.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "^2.1.2"
   }
 }
