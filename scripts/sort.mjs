@@ -76,7 +76,6 @@ fs.readFile(packageJsonPath, "utf8", (err, data) => {
     "version",
     "private",
     "description",
-    "packageManager",
     "categories",
     "keywords",
     "homepage",
@@ -188,7 +187,9 @@ fs.readFile(packageJsonPath, "utf8", (err, data) => {
   // Modify "keywords" and "files" to be single-line
   const arrayProperties = ["keywords", "files"];
   for (const property of arrayProperties) {
-    const regex = new RegExp(`("${property}":\\s*)\\[\\s*\\n([\\s\\S]*?)\\s*\\]`);
+    const regex = new RegExp(
+      `("${property}":\\s*)\\[\\s*\\n([\\s\\S]*?)\\s*\\]`
+    );
     jsonString = jsonString.replace(regex, (_, p1, p2) => {
       // Split the array items into individual lines, trim them, and join with ', '
       const items = p2
