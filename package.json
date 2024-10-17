@@ -20,7 +20,9 @@
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "node scripts/rm.mjs dist && node scripts/build.mjs",
     "check": "biome check ./src",
@@ -35,6 +37,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.3",
+    "@types/node": "^22.7.6",
     "esbuild": "^0.24.0",
     "typescript": "^5.6.3",
     "vite-tsconfig-paths": "^5.0.1",
