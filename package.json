@@ -13,7 +13,6 @@
   },
   "license": "MIT",
   "author": "evacuate",
-
   "type": "module",
   "exports": {
     "import": "./dist/index.js",
