@@ -22,13 +22,18 @@ jobs:
           node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
 
-      - name: Install yarn packages
-        run: yarn install --frozen-lockfile
+      - name: Set Up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+
+      - name: Install pnpm packages
+        run: pnpm install --frozen-lockfile
 
       - name: build
-        run: yarn build
+        run: pnpm build
 
       - name: Publish to npm
-        run: npm publish --provenance --access public
+        run: pnpm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
