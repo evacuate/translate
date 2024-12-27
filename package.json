@@ -28,15 +28,23 @@
     "format": "biome format ./src",
     "format:write": "biome format --write ./src",
     "lint": "biome lint ./src",
+    "prepare": "husky",
     "sort": "node scripts/sort.mjs",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "typecheck": "tsc --noEmit"
   },
+  "lint-staged": {
+    "*.{js,mjs,ts,mts}": "biome format --write"
+  },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@types/node": "^22.10.2",
     "esbuild": "^0.24.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
     "typescript": "^5.7.2",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^2.1.8"
